@@ -2,12 +2,16 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res)=> {
-    res.send("Hello Home");
+app.get("/user", (req, res)=> {
+    res.send({firstname: "shashank", lastname: "NV"});
 });
 
-app.get("/admin", (req, res)=> {
-    res.send("Hello Admin");
+app.post("/user", (req, res)=> {
+    res.send("POST call called");
+});
+
+app.delete("/user", (req, res)=> {
+    res.send("DELETED");
 });
 
 app.listen(7777, ()=> {
